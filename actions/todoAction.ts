@@ -1,5 +1,4 @@
 "use server";
-
 import { PrismaClient } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 
@@ -8,7 +7,7 @@ const prisma = new PrismaClient();
 export async function getTodosAction({ userId }: { userId: string | null }) {
   return await prisma.todo.findMany({
     where: {
-      userId: userId as string,
+      user_Id: userId as string,
     },
     orderBy: {
       createAt: "desc",
@@ -31,7 +30,7 @@ export async function createTodosAction({
       title,
       body,
       completed,
-      userId: userId as string,
+      user_Id: userId as string,
     },
   });
   revalidatePath("/");
