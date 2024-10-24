@@ -2,9 +2,11 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
 const isPublicRoute = createRouteMatcher(["/"]);
 
-export default clerkMiddleware((auth, request) => {
-  if (isPublicRoute(request)) {
-    auth().protect();
+export default clerkMiddleware((auth, req) => {
+  if (!auth().userId && isPublicRoute(req)) {
+    // Add custom logic to run before redirecting
+
+    return auth().redirectToSignIn();
   }
 });
 
