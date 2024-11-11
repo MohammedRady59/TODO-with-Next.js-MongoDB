@@ -4,8 +4,6 @@ const isPublicRoute = createRouteMatcher(["/"]);
 
 export default clerkMiddleware((auth, req) => {
   if (!auth().userId && isPublicRoute(req)) {
-    // Add custom logic to run before redirecting
-
     return auth().redirectToSignIn();
   }
 });
@@ -13,3 +11,4 @@ export default clerkMiddleware((auth, req) => {
 export const config = {
   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };
+/* EYLRjlF34R1ARA78 */

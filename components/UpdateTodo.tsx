@@ -67,10 +67,9 @@ function UpdateTodo({ myTodo }: IProps) {
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
+            <DialogTitle>Edit Todo</DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
+              Make changes to your todo here. Click save when you&apos;re done.
             </DialogDescription>
           </DialogHeader>
           <div className=" py-4">

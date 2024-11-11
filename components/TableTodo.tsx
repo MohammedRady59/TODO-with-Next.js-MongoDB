@@ -27,7 +27,7 @@ function TableTodo({ todos }: IProps) {
   return (
     <>
       <Table className="mt-4">
-        <TableCaption>A list of your todosa.</TableCaption>
+        <TableCaption>A list of your todos.</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead>ID</TableHead>
